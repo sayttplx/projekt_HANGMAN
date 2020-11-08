@@ -1,0 +1,151 @@
+:root {
+    --body-color: #dededf;
+    --text-color: #193546;;
+    --theme-color: #ff8c8c;
+    --theme-font:'Ruda', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--theme-font);
+    background-color: var(--body-color);
+    max-width: 100%;
+    margin: 0 auto;
+    cursor: default;
+    height: 10rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #193546;
+}
+
+h1 {
+    color: var(--theme-color);
+}
+
+ul {
+    list-style: none;
+    margin-block-start: 9rem;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
+    margin-inline-start: -20px;
+    margin-inline-end: 80px;
+    font-size: 1rem;
+}
+
+li {
+    margin-top: auto;
+    font-size: 2rem;
+    color: var(--text-color)
+}
+
+svg {
+    margin-top: -8rem;
+    transform: scale(0.6);
+}
+
+div {
+    color: var(--text-color)
+}
+
+p {
+    color: var(--text-color)
+}
+
+button {
+    text-align: center;
+    font-size: 2rem;
+    border: 2px solid  var(--theme-color);
+    width: 10rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px var(--theme-color);
+    cursor: pointer;
+ }
+
+button:focus { 
+     outline-style: none; 
+    }
+
+button:hover {
+    transform:scale(1.05);
+    transition: ease-in-out 0.1s;
+    transition: linear 0.1s;
+ }
+
+#start-button, #restart-button {
+    text-align: center;
+    font-size: 2rem;
+    border: 2px solid  var(--theme-color);
+    width: 70%;
+    border-radius: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 2px var(--theme-color);
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#start-button:hover {
+    transform:scale(1.05);
+    transition: ease-in-out 0.1s;
+    transition: linear 0.1s;
+}
+
+#restart-button:hover {
+    transform:scale(1.05);
+    transition: ease-in-out 0.1s;
+    transition: linear 0.1s;
+}
+
+#alphabet {
+    font-weight: bolder;
+    display: grid;
+    grid-template-columns: repeat(6, 5fr);
+    grid-template-rows: repeat(5, 3.5rem);
+    text-align: center;
+    width: 35%;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.letters:hover {
+    color: var(--theme-color);
+    transform:scale(1.1);
+    transition: ease-in-out 0.1s;
+    transition: linear 0.1s;
+}
+
+#hint {
+    position: absolute;
+    top: 25%;
+    left: 42%;
+}
+
+#clue {
+    position: absolute;
+    left: 42%;
+}
+
+#counter {
+    position: absolute;
+    left: 40%;
+}
+
+#input-text {
+    font-size: 1.5rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
