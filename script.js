@@ -148,4 +148,3 @@ function joinThat() {
     let audio = new Audio("https://www.rafaelalucas.com/dailyui/9/songs/song1.mp3");
     audio.play();
 }
-
