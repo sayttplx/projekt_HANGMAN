@@ -100,6 +100,7 @@ function count() {
     }
     // ADDS THE HANING MAN SVGS BY EACH MISTAKE
     if (mistakes === 1) {
+        ground.style.visibility = '';
         pole.style.visibility = '';
     } if (mistakes === 2) {
         head.style.visibility = '';
@@ -150,11 +151,11 @@ function joinThat() {
 
 // SOUND FUNCTIONS
 function gameOver() {
-let audio = new Audio("/assets/miss.mp3");
-audio.play();
+    let audio = new Audio("/assets/miss.mp3");
+    audio.play();
 }
 
 function clear() {
     let audio = new Audio("/assets/clear.mp3");
     audio.play();
-    }
+}
