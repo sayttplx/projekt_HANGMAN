@@ -7,7 +7,7 @@ let counter = document.getElementById('counter');
 let update = document.getElementById('mistakes');
 let getHint = document.getElementById("hint");
 let showClue = document.getElementById("clue");
-let alphabet = document.getElementById('alphabet')
+let alphabet = document.getElementById('alphabet');
 let inputText = document.getElementById('input-text');
 let body = document.getElementById('body');
 let arm = document.getElementById('arm');
@@ -16,7 +16,7 @@ let head = document.getElementById('head');
 let pole = document.getElementById('pole');
 let ground = document.getElementById('ground');
 
-// HIDE SOME STUFF 
+// DOM STYLE - HIDE SOME STUFF 
 ground.style.visibility = 'hidden';
 pole.style.visibility = 'hidden';
 head.style.visibility = 'hidden';
@@ -53,23 +53,22 @@ restart.addEventListener('click', () => {
     location.reload();
 })
 
-// start button with eventlistner and creating a "empty" list [_ _ _ _ _ _] 
-// length equal to the randomized word -------------------------------------------
-start.addEventListener('click', () => {
+// START BUTTON WITH EVENTLISTNER AND CREATING A "EMPTY" LIST [_ _ _ _ _ _] 
+// LENGTH EQUAL TO THE RANDOMIZED WORD -------------------------------------------
+    start.addEventListener('click', () => {
     start.style.visibility = 'hidden';
     alphabet.style.visibility = '';
     counter.style.visibility = '';
     getHint.style.visibility = '';
-    myPlay();
-
+    
+    // LOOP
     for (var i = 0; i < randomWords.length; i++) {
         answerArray[i] = ' _ ';
         joinThat();
     }
 })
-
-// checking if choosen letter is a match on the randomized word
-// if so it replaces the index in the "empty" list with that letter.
+// CHECKING IF CHOOSEN LETTER IS A MATCH ON THE RANDOMIZED WORD
+// IF SO IT REPLACES THE INDEX IN THE "EMPTY" LIST WITH THAT LETTER
 let guess = (id) => {
     if (randomWords.includes(id)) {
         for (x = 0; x < randomWords.length; x++) {
@@ -77,7 +76,6 @@ let guess = (id) => {
                 answerArray[x] = (id);
                 joinThat();
                 check();
-                
             }
         }
     }
@@ -97,6 +95,7 @@ function count() {
         leg.style.visibility = '';
         alphabet.style.visibility = 'hidden';
         inputText.innerHTML = `RIGHT WORD WAS <u>${randomWords}</u> YOU SUCK!`;
+        gameOver();
         hideThese();
     }
     // ADDS THE HANING MAN SVGS BY EACH MISTAKE
@@ -118,6 +117,7 @@ function check() {
         inputText.innerHTML = `YOU FUCKING DESTROYED THIS GAME!`;
         restart.style.visibility = '';
         hideThese();
+        clear();
     }
 }
 
@@ -131,7 +131,7 @@ function hideButtons() {
         li.addEventListener('click', _ => li.style.visibility = 'hidden'));
 }
 
-// HIDE FUNCTION
+// DOM STYLE - HIDDEN FUNCTION
 function hideThese() {
     alphabet.style.visibility = 'hidden';
     counter.style.visibility = 'hidden';
@@ -142,11 +142,19 @@ function hideThese() {
     showClue.style.visibility = 'hidden';
 }
 
+
+// JOIN RETURNS THE ARREY AS A STRING THATS WHY WE GET THE EMPTY ARREY OR WHEN WE GET A HIT IT FILLS THAT INDEX WITH A LETTER
 function joinThat() {
     inputText.innerHTML = answerArray.join('');
 }
 
-function myPlay() {
-    let audio = new Audio("https://www.rafaelalucas.com/dailyui/9/songs/song1.mp3");
-    audio.play();
+// SOUND FUNCTIONS
+function gameOver() {
+let audio = new Audio("miss.mp3");
+audio.play();
 }
+
+function clear() {
+    let audio = new Audio("clear.mp3");
+    audio.play();
+    }
