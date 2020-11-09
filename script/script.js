@@ -35,8 +35,8 @@ let win = 0;
 let dead = 0;
 
 // WORDS AND HINTS ARREYS ---------------------------------------------
-let hints = ["pokemon", "brain-damage", "soothing", "animal", "fruit", "reptile", "essential", "cocktail"];
-let words = ["pikachu", "javascript", "sunset", "hyena", "banana", "turtle", "coffee", "sidecar"];
+let hints = ["pokemon", "brain-damage", "soothing", "predator", "fruit", "reptile", "essential", "cocktail", "bird"];
+let words = ["pikachu", "javascript", "sunset", "hyena", "banana", "turtle", "coffee", "sidecar", "sparrow"];
 
 // RANDOMIZER ---------------------------------------------------------
 let randomWords = words[Math.floor(Math.random() * words.length)];
@@ -150,11 +150,11 @@ function joinThat() {
 
 // SOUND FUNCTIONS
 function gameOver() {
-let audio = new Audio("miss.mp3");
+let audio = new Audio("/assets/miss.mp3");
 audio.play();
 }
 
 function clear() {
-    let audio = new Audio("clear.mp3");
+    let audio = new Audio("/assets/clear.mp3");
     audio.play();
     }
