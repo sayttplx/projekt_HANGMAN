@@ -62,7 +62,7 @@ restart.addEventListener('click', () => {
     getHint.style.visibility = '';
     
     // LOOP
-    for (var i = 0; i < randomWords.length; i++) {
+    for (i = 0; i < randomWords.length; i++) {
         answerArray[i] = ' _ ';
         joinThat();
     }
